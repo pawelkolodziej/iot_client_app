@@ -1,6 +1,6 @@
 <widget xmlns="http://www.w3.org/ns/widgets" xmlns:gap="http://phonegap.com/ns/1.0" id="com.pkolodziej.phonegap" version="1.0.0">
-  <name>iot_hub</name>
-  <description>iot_hub</description>
+  <name>iot_client_app</name>
+  <description>iot_client_app</description>
   <author email="pakolodziej@gmail.com">PawelK</author>
   <content src="app.html"/>
   <preference name="DisallowOverscroll" value="true"/>
