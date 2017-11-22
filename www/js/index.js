@@ -19,13 +19,8 @@
 var app = {
     // Application Constructor
     initialize: function() {
+		alert('start');
         this.bindEvents();
-		navigator.notification.alert(
-                'start',         // message
-                null,                 // callback
-                'debug',           // title
-                'Ok'                  // buttonName
-            );
     },
     // Bind Event Listeners
     //
