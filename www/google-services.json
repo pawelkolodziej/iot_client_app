@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "607120948857",
+    "firebase_url": "https://iot-client-new.firebaseio.com",
+    "project_id": "iot-client-new",
+    "storage_bucket": "iot-client-new.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:607120948857:android:9a272913bdb29ecf",
+        "android_client_info": {
+          "package_name": "pl.pkolodziej.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "607120948857-eo8p90b4ruq4g8uep3gps7a5g14lc0ln.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCH-sRLVy0c_XCZaxITuJtvWkzP2_ECu0s"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
