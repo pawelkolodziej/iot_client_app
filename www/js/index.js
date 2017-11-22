@@ -57,7 +57,7 @@ var app = {
         console.log('after init');
 
         push.on('registration', function(data) {
-		alert(data.registrationId);
+			alert(data.registrationId);
             console.log('registration event: ' + data.registrationId);
 
             var oldRegId = localStorage.getItem('registrationId');
@@ -76,18 +76,13 @@ var app = {
         });
 
         push.on('error', function(e) {
-            alert('error'+ e.message);
+            alert(e.message);
 			console.log("push error = " + e.message);
         });
 
         push.on('notification', function(data) {
-            console.log('notification event');
-            navigator.notification.alert(
-                data.message,         // message
-                null,                 // callback
-                data.title,           // title
-                'Ok'                  // buttonName
-            );
+            alert(data.message);
+			console.log('notification event');
        });
     }
 };
