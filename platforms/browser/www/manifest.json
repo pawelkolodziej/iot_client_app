@@ -1,0 +1,12 @@
+{
+  "background_color": "#FFF",
+  "display": "standalone",
+  "name": "iot_client_app",
+  "short_name": "iot_client_app",
+  "version": "pl.pkolodziej.app",
+  "description": "Push sample application that receives push notifications.",
+  "author": "PhoneGap Team",
+  "icons": [],
+  "start_url": "index.html",
+  "theme_color": "#ee6e73"
+}
