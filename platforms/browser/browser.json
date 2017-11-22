@@ -10,6 +10,9 @@
     "phonegap-plugin-push": {
       "SENDER_ID": "XXXXXXX",
       "PACKAGE_NAME": "pl.pkolodziej.app"
+    },
+    "cordova-plugin-fcm": {
+      "PACKAGE_NAME": "pl.pkolodziej.app"
     }
   },
   "dependent_plugins": {},
@@ -29,9 +32,18 @@
       "clobbers": [
         "PushNotification"
       ]
+    },
+    {
+      "file": "plugins/cordova-plugin-fcm/www/FCMPlugin.js",
+      "id": "cordova-plugin-fcm.FCMPlugin",
+      "pluginId": "cordova-plugin-fcm",
+      "clobbers": [
+        "FCMPlugin"
+      ]
     }
   ],
   "plugin_metadata": {
-    "phonegap-plugin-push": "1.8.4"
+    "phonegap-plugin-push": "1.8.4",
+    "cordova-plugin-fcm": "2.1.2"
   }
 }

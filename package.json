@@ -9,10 +9,12 @@
     "plugins": {
       "phonegap-plugin-push": {
         "SENDER_ID": "XXXXXXX"
-      }
+      },
+      "cordova-plugin-fcm": {}
     }
   },
   "dependencies": {
+    "cordova-plugin-fcm": "^2.1.2",
     "phonegap-plugin-push": "~1.8.0"
   }
 }

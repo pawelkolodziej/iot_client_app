@@ -19,6 +19,7 @@
 var app = {
     // Application Constructor
     initialize: function() {
+		alert('start');
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -33,15 +34,17 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
+		alert('device ready');
         console.log('Received Device Ready Event');
         console.log('calling setup push');
         app.setupPush();
     },
     setupPush: function() {
+		alert('push init');
         console.log('calling push init');
         var push = PushNotification.init({
             "android": {
-                "senderID": "XXXXXXXX"
+                "senderID": "607120948857"
             },
             "browser": {},
             "ios": {
@@ -54,6 +57,7 @@ var app = {
         console.log('after init');
 
         push.on('registration', function(data) {
+			alert(data.registrationId);
             console.log('registration event: ' + data.registrationId);
 
             var oldRegId = localStorage.getItem('registrationId');
@@ -72,17 +76,13 @@ var app = {
         });
 
         push.on('error', function(e) {
-            console.log("push error = " + e.message);
+            alert(e.message);
+			console.log("push error = " + e.message);
         });
 
         push.on('notification', function(data) {
-            console.log('notification event');
-            navigator.notification.alert(
-                data.message,         // message
-                null,                 // callback
-                data.title,           // title
-                'Ok'                  // buttonName
-            );
+            alert(data.message);
+			console.log('notification event');
        });
     }
 };
