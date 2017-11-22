@@ -34,7 +34,7 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-		alert'device ready');
+		alert('device ready');
         console.log('Received Device Ready Event');
         console.log('calling setup push');
         app.setupPush();
@@ -76,7 +76,8 @@ var app = {
         });
 
         push.on('error', function(e) {
-            console.log("push error = " + e.message);
+            alert('error'+ e.message);
+			console.log("push error = " + e.message);
         });
 
         push.on('notification', function(data) {
