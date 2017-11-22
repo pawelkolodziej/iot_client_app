@@ -34,23 +34,13 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-		navigator.notification.alert(
-                'device ready',         // message
-                null,                 // callback
-                'debug',           // title
-                'Ok'                  // buttonName
-            );
+		alert'device ready');
         console.log('Received Device Ready Event');
         console.log('calling setup push');
         app.setupPush();
     },
     setupPush: function() {
-		navigator.notification.alert(
-                'push init',         // message
-                null,                 // callback
-                'debug',           // title
-                'Ok'                  // buttonName
-            );
+		alert('push init');
         console.log('calling push init');
         var push = PushNotification.init({
             "android": {
@@ -67,12 +57,7 @@ var app = {
         console.log('after init');
 
         push.on('registration', function(data) {
-		navigator.notification.alert(
-                data.registrationId,         // message
-                null,                 // callback
-                'debug',           // title
-                'Ok'                  // buttonName
-            );
+		alert(data.registrationId);
             console.log('registration event: ' + data.registrationId);
 
             var oldRegId = localStorage.getItem('registrationId');
