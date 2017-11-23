@@ -51,44 +51,7 @@
         </div>
     </div>
     <script type="text/javascript" src="cordova.js"></script>
- <script type="text/javascript">
-  function onLoad() {
-  document.addEventListener("deviceready", Fire, false);
-                       }
-
-    function Fire() {
-
-alert('fire');
-
-        FCMPlugin.getToken(
-          function (token) {
-
-               alert(token);
-          },
-          function (err) {
-                   alert("Error: " + 'error retrieving token: ' + err);
-          }
-        );
-
-        FCMPlugin.onNotification(function(data){
-                if(data.wasTapped){
-                    alert( JSON.stringify(data.title ) );
-                }else{
-                  alert( JSON.stringify(data.title ) );
-                }
-              },
-              function(msg){
-                  alert('onNotification callback successfully registered: ' + msg);
-              },
-              function(err){
-                  alert('Error registering onNotification callback: ' + err);
-              }
-            );
-
-    };
-
-
-    </script>
+<script type="text/javascript" src="index1.js"></script>
 </body>
 
 </html>
