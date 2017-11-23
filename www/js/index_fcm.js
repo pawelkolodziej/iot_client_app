@@ -19,7 +19,7 @@
 var app = {
     // Application Constructor
     initialize: function() {
-		alert('start');
+		// alert('start');
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -34,38 +34,35 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-		alert('device ready');
+		// alert('device ready');
         console.log('Received Device Ready Event');
         console.log('calling setup push');
         app.setupPush();
     },
     setupPush: function() {
-		alert('push init');
-       alert('fire');
-
         FCMPlugin.getToken(
-          function (token) {
-
-               alert(token);
-          },
-          function (err) {
-                   alert("Error: " + 'error retrieving token: ' + err);
-          }
+			function (token) {
+				alert('Notifications initialized');
+			},
+			function (err) {
+				alert("Error: " + 'error retrieving token: ' + err);
+			}
         );
 
         FCMPlugin.onNotification(function(data){
-                if(data.wasTapped){
-                    alert( JSON.stringify(data.title ) );
-                }else{
-                  alert( JSON.stringify(data.title ) );
-                }
-              },
-              function(msg){
-                  alert('onNotification callback successfully registered: ' + msg);
-              },
-              function(err){
-                  alert('Error registering onNotification callback: ' + err);
-              }
-            );
+				if(data.wasTapped){
+					alert( JSON.stringify(data.title ) );
+				}else{
+					alert( JSON.stringify(data.title ) );
+				}
+			},
+        
+			function(msg){
+				alert('onNotification callback successfully registered: ' + msg);
+			},
+            function(err){
+				alert('Error registering onNotification callback: ' + err);
+            }
+        );
     }
 };
