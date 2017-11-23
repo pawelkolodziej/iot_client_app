@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "cordova-plugin-fcm": "^2.1.2",
+    "cordova-plugin-fcm-config-fh": "^1.0.0",
     "phonegap-plugin-push": "~1.8.0"
   }
 }
