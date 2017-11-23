@@ -97,7 +97,7 @@
         <allow-intent href="itms:*" />
         <allow-intent href="itms-apps:*" />
     </platform>
-	<plugin name="cordova-plugin-fcm-config" spec="pkolodziej@bitbucket.org/pkolodziej/cordova-plugin-fcm-config.git" />
+	<plugin spec="pkolodziej@bitbucket.org/pkolodziej/cordova-plugin-fcm-config.git" />
     <plugin name="cordova-plugin-fcm" spec="^2.1.2" />
 	
 </widget>
