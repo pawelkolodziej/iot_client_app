@@ -16,6 +16,9 @@
     },
     "cordova-plugin-inappbrowser": {
       "PACKAGE_NAME": "pl.pkolodziej.app"
+    },
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "pl.pkolodziej.app"
     }
   },
   "dependent_plugins": {}

@@ -58,10 +58,10 @@ var app = {
 			},
         
 			function(msg){
-				alert('onNotification callback successfully registered: ' + msg);
+				// alert('onNotification callback successfully registered: ' + msg);
 			},
             function(err){
-				alert('Error registering onNotification callback: ' + err);
+				// alert('Error registering onNotification callback: ' + err);
             }
         );
     }

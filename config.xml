@@ -92,9 +92,6 @@
     <allow-intent href="geo:*" />
     <platform name="android">
         <allow-navigation href="*" />
-        <allow-intent href="*" />
-		<allow-intent href="http://*/*" />
-        <allow-intent href="https://*/*" /
         <allow-intent href="market:*" />
     </platform>
     <platform name="ios">
@@ -104,4 +101,5 @@
     <plugin spec="https://github.com/pawelkolodziej/fmc_config_plugin.git" />
     <plugin name="cordova-plugin-fcm" spec="^2.1.2" />
     <plugin name="cordova-plugin-inappbrowser" spec="^1.7.2" />
+    <plugin name="cordova-plugin-whitelist" spec="^1.3.3" />
 </widget>

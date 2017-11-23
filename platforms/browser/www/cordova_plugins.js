@@ -45,7 +45,8 @@ module.exports.metadata =
 {
     "phonegap-plugin-push": "1.8.4",
     "cordova-plugin-fcm": "2.1.2",
-    "cordova-plugin-inappbrowser": "1.7.2"
+    "cordova-plugin-inappbrowser": "1.7.2",
+    "cordova-plugin-whitelist": "1.3.3"
 }
 // BOTTOM OF METADATA
 });
