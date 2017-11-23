@@ -10,12 +10,14 @@
       "phonegap-plugin-push": {
         "SENDER_ID": "XXXXXXX"
       },
-      "cordova-plugin-fcm": {}
+      "cordova-plugin-fcm": {},
+      "cordova-plugin-inappbrowser": {}
     }
   },
   "dependencies": {
     "cordova-plugin-fcm": "^2.1.2",
     "cordova-plugin-fcm-config-fh": "^1.0.0",
+    "cordova-plugin-inappbrowser": "^1.7.2",
     "phonegap-plugin-push": "~1.8.0"
   }
 }
