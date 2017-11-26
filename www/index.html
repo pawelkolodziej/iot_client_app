@@ -9,7 +9,6 @@
 		<title>iot_hub_app</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1" />
-
 		<!--[if lte IE 8]><script src="assets/js/ie/html5shiv.js"></script><![endif]-->
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<!--[if lte IE 8]><link rel="stylesheet" href="assets/css/ie8.css" /><![endif]-->
@@ -20,7 +19,9 @@
 		<!-- Header -->
 			<header id="header">
 				<h1><a href="index.html">iot_monitor</a></h1>
-				<a href="#nav">Menu</a>
+				<a href="#nav1">zdjęcie</a>|
+				<a href="#nav1">ustawienia</a>| 
+				<!-- <a href="#nav">Menu</a> -->
 			</header>
 
 		<!-- Nav -->
@@ -34,8 +35,25 @@
 
 		<section id="main" class="wrapper">
 			<div class="container">
+				<div>
+					<div style="position:relative;width:280px;height:100px;display: inline-block;" >
+						<img style="position:absolute;left:0" src="images/sleeping.svg" width="90">
+						<div style="position:absolute;top:10px;left:110px">
+							<h6>Dziecko śpi</h6>
+							<h6></h6>
+							<h6>Aktywność: </h6>
+						</div>
+					</div>
+					<div style="position:relative;width:280px;height:100px;display: inline-block;">
+						<img style="position:absolute;left:0" src="images/temp_humidity.png" width="90">
+						<div style="position:absolute;top:10px;left:110px">
+							<h6 id="temp"></h6>
+							<h6 id="humidity"></h6>
+							<h6 id="time"></h6>
+						</div>
+					</div>
+				</div>
 				<div id="video_wrapper">
-				
 					<img src="http://109.241.244.41:9090/stream/video.mjpeg">
 				</div>
 			</div>
@@ -52,6 +70,24 @@
 			<script type="text/javascript" src="js/index_fcm.js"></script>
 			<script type="text/javascript">
 				app.initialize();
+			</script>
+			<script>
+				$.getJSON('http://api.thingspeak.com/channels/350945/field/1.json', function(jd) {
+					var date = jd.channel.updated_at.slice(0, 10).split('-');
+					var time = jd.channel.updated_at.slice(11, -1).split(':');
+					<!-- $("#temp_update").append('<b>'+time[0] + ':' + time[1] + ' - ' + date[2] +'/'+ date[1] +'/'+ date[0]+'</b>'); -->
+					var temp = parseFloat(jd.feeds[jd.feeds.length-1].field1);
+					$("#temp").append('Temp: ' + temp.toFixed(1) + '°C ');
+							
+					$.getJSON('http://api.thingspeak.com/channels/350945/field/2.json', function(hd) {
+						var date = hd.channel.updated_at.slice(0, 10).split('-');
+						var time = hd.channel.updated_at.slice(11, -1).split(':');
+						$("#time").text('Pomiar: ' +  time[0] + ':' + time[1] + ' - ' + date[2] +'/'+ date[1] +'/'+ date[0]);
+						var humidity = parseFloat(hd.feeds[hd.feeds.length-1].field2);
+						$("#humidity").append('Wilgotność: ' + humidity.toFixed(1));
+					});
+					
+				});
 			</script>
 	</body>
 </html>

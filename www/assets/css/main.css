@@ -1657,11 +1657,15 @@
 		margin: 0 0 2em 0;
 	}
 
-	h1, h2, h3, h4, h5, h6 {
+	h1, h2, h3, h4, {
 		font-weight: 700;
 		line-height: 1em;
 		margin: 0 0 1em 0;
-		text-transform: uppercase;
+	}
+	
+	h5, h6  {
+		line-height: 1em;
+		margin: 0 0 0.5em 0;	
 	}
 
 		h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
@@ -4089,13 +4093,13 @@
 /* Main */
 
 	#main {
-		padding: 5em 0 3em 0;
+		padding: 1em 0 3em 0;
 	}
 
 		@media screen and (max-width: 1280px) {
 
 			#main {
-				padding: 4em 0 2em 0;
+				padding: 1em 0 2em 0;
 			}
 
 		}
@@ -4103,7 +4107,7 @@
 		@media screen and (max-width: 980px) {
 
 			#main {
-				padding: 3em 0 1em 0;
+				padding: 1em 0 1em 0;
 			}
 
 		}
@@ -4111,7 +4115,7 @@
 		@media screen and (max-width: 736px) {
 
 			#main {
-				padding: 2em 0 0.1em 0;
+				padding: 1em 0 0.1em 0;
 			}
 
 		}
