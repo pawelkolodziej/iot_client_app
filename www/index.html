@@ -36,17 +36,17 @@
 		<section id="main" class="wrapper">
 			<div class="container">
 				<div>
-					<div style="position:relative;width:280px;height:100px;display: inline-block;" >
-						<img style="position:absolute;left:0" src="images/sleeping.svg" width="90">
-						<div style="position:absolute;top:10px;left:110px">
+					<div style="position:relative;width:180px;height:100px;display: inline-block;" >
+						<img style="position:absolute;left:0" src="images/sleeping.svg" width="60">
+						<div style="position:absolute;top:10px;left:70px">
 							<h6>Dziecko śpi</h6>
 							<h6></h6>
 							<h6>Aktywność: </h6>
 						</div>
 					</div>
-					<div style="position:relative;width:280px;height:100px;display: inline-block;">
-						<img style="position:absolute;left:0" src="images/temp_humidity.png" width="90">
-						<div style="position:absolute;top:10px;left:110px">
+					<div style="position:relative;width:180px;height:100px;display: inline-block;">
+						<img style="position:absolute;left:0" src="images/temp_humidity.png" width="60">
+						<div style="position:absolute;top:10px;left:70px">
 							<h6 id="temp"></h6>
 							<h6 id="humidity"></h6>
 							<h6 id="time"></h6>
@@ -82,7 +82,7 @@
 					$.getJSON('http://api.thingspeak.com/channels/350945/field/2.json', function(hd) {
 						var date = hd.channel.updated_at.slice(0, 10).split('-');
 						var time = hd.channel.updated_at.slice(11, -1).split(':');
-						$("#time").text('Pomiar: ' +  time[0] + ':' + time[1] + ' - ' + date[2] +'/'+ date[1] +'/'+ date[0]);
+						$("#time").text(time[0] + ':' + time[1] + ' - ' + date[2] +'/'+ date[1] +'/'+ date[0]);
 						var humidity = parseFloat(hd.feeds[hd.feeds.length-1].field2);
 						$("#humidity").append('Wilgotność: ' + humidity.toFixed(1));
 					});
