@@ -42,10 +42,12 @@ var app = {
     setupPush: function() {
         FCMPlugin.getToken(
 			function (token) {
-				// alert('Notifications initialized');
+				$.get('https://api.thingspeak.com/update?api_key=I3DW8PXUG00YOHNH&field1='+token, function( data ) {
+					// alert("FCM token sent");
+				});
 			},
 			function (err) {
-				// alert("Error: " + 'error retrieving token: ' + err);
+				alert("Error: " + 'error retrieving token: ' + err);
 			}
         );
 

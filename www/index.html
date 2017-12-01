@@ -72,21 +72,14 @@
 				app.initialize();
 			</script>
 			<script>
-				$.getJSON('http://api.thingspeak.com/channels/350945/field/1.json', function(jd) {
-					var date = jd.channel.updated_at.slice(0, 10).split('-');
-					var time = jd.channel.updated_at.slice(11, -1).split(':');
-					<!-- $("#temp_update").append('<b>'+time[0] + ':' + time[1] + ' - ' + date[2] +'/'+ date[1] +'/'+ date[0]+'</b>'); -->
-					var temp = parseFloat(jd.feeds[jd.feeds.length-1].field1);
+				$.getJSON('http://api.thingspeak.com/channels/350945/feeds/last.json', function(jd) {
+					var date = jd.created_at.slice(0, 10).split('-');
+					var time = jd.created_at.slice(11, -1).split(':');
+					var temp = parseFloat(jd.field1);
+					var humidity = parseFloat(jd.field2);
 					$("#temp").append('Temp: ' + temp.toFixed(1) + '°C ');
-							
-					$.getJSON('http://api.thingspeak.com/channels/350945/field/2.json', function(hd) {
-						var date = hd.channel.updated_at.slice(0, 10).split('-');
-						var time = hd.channel.updated_at.slice(11, -1).split(':');
-						$("#time").text(time[0] + ':' + time[1] + ' - ' + date[2] +'/'+ date[1] +'/'+ date[0]);
-						var humidity = parseFloat(hd.feeds[hd.feeds.length-1].field2);
-						$("#humidity").append('Wilgotność: ' + humidity.toFixed(1));
-					});
-					
+					$("#humidity").append('Wilgotność: ' + humidity.toFixed(1));
+					$("#time").text(time[0] + ':' + time[1] + ' - ' + date[2] +'/'+ date[1] +'/'+ date[0]);
 				});
 			</script>
 	</body>
