@@ -52,11 +52,7 @@ var app = {
         );
 
         FCMPlugin.onNotification(function(data){
-				if(data.wasTapped){
-					alert( JSON.stringify(data.title ) );
-				}else{
-					alert( JSON.stringify(data.title ) );
-				}
+				$("#motion").attr("src","crawling.svg");
 			},
         
 			function(msg){
