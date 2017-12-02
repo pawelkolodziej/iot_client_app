@@ -52,7 +52,7 @@ var app = {
         );
 
         FCMPlugin.onNotification(function(data){
-				$("#motion").attr("src","crawling.svg");
+				$("#motion").attr("src","images/crawling.svg");
 			},
         
 			function(msg){
