@@ -53,6 +53,9 @@ var app = {
 
         FCMPlugin.onNotification(function(data){
 				$("#motion").attr("src","images/crawling.svg");
+				var now = new Date();
+				$("#active").text(now.getHours()+':'+now.getMinutes()+':'+now.getSeconds());
+				setTimeout(function(){ $("#motion").attr("src","images/sleeping.svg"); }, 10000);
 			},
         
 			function(msg){
